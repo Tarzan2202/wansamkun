@@ -1,0 +1,107 @@
+:root {
+    --background: hsl(0, 0%, 100%);
+    --foreground: hsl(240, 10%, 3.9%);
+    --card: hsl(0, 0%, 100%);
+    --card-foreground: hsl(240, 10%, 3.9%);
+    --popover: hsl(0, 0%, 100%);
+    --popover-foreground: hsl(240, 10%, 3.9%);
+    --primary: hsl(142, 86%, 28%);
+    --primary-foreground: hsl(356, 29%, 98%);
+    --secondary: hsl(240, 4.8%, 95.9%);
+    --secondary-foreground: hsl(240, 5.9%, 10%);
+    --muted: hsl(240, 4.8%, 95.9%);
+    --muted-foreground: hsl(240, 3.8%, 45%);
+    --accent: hsl(240, 4.8%, 95.9%);
+    --accent-foreground: hsl(240, 5.9%, 10%);
+    --destructive: hsl(0, 72%, 51%);
+    --destructive-foreground: hsl(0, 0%, 98%);
+    --border: hsl(240, 5.9%, 90%);
+    --input: hsl(240, 5.9%, 90%);
+    --ring: hsl(142, 86%, 28%);
+    --radius: 0.5rem;
+}
+body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.header {
+    background-color: var(--background);
+    padding: 1rem 1rem;
+}
+.inner-header {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.title {
+    font-size: 1.875rem;
+    font-weight: bold;
+    color: var(--foreground);
+}
+.main-content {
+    flex: 1;
+    background-color: var(--muted);
+    padding: 3rem 1rem;
+}
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.text-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.image {
+    display: block;
+    margin: 0 auto;
+    border-radius: var(--radius);
+    object-fit: cover;
+    aspect-ratio: 2 / 1;
+}
+.footer {
+    background-color: var(--background);
+    padding: 1.5rem 1rem;
+}
+.inner-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+}
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: var(--background);
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.nav-list {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.nav-item {
+    margin: 0 1rem;
+}
+.nav-link {
+    color: var(--foreground);
+    text-decoration: none;
+    padding: 1rem 0;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+.nav-link:hover {
+    color: var(--primary);
+}
+.section {
+    scroll-margin-top: 70px;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>วันสำคัญ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        const template = document.createElement('template');
+        template.innerHTML = `
+            <style>
+                @import 'styles.css';
+            </style>
+            <nav class="navbar">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#วันวิสาขบูชา" class="nav-link">วันวิสาขบูชา</a></li>
+                    <li class="nav-item"><a href="#วันอาสาฬหบูชา" class="nav-link">วันอาสาฬหบูชา</a></li>
+                    <li class="nav-item"><a href="#วันมาฆบูชา" class="nav-link">วันมาฆบูชา</a></li>
+                </ul>
+            </nav>
+
+            <div class="container">
+                <header class="header">
+                    <div class="inner-header">
+                        <h1 class="title" style="text-align: center;">วันสำคัญทางพระพุทธศาสนา</h1>
+                    </div>
+                </header>
+                <main class="main-content">
+                    <div class="content">
+                        <div class="text-content">
+                            <p>
+                                ในประเพณีทางพระพุทธศาสนา มีวันสำคัญหลายวันที่มีความหมายลึกซึ้งสำหรับผู้ปฏิบัติธรรม
+                                วันเหล่านี้เป็นการระลึกถึงเหตุการณ์สำคัญในชีวิตของพระพุทธเจ้า และเป็นโอกาสสำหรับการไตร่ตรอง
+                                การปฏิบัติธรรม และการรวมตัวกันของชุมชน
+                            </p>
+                            <section id="วันวิสาขบูชา" class="section">
+                                <h2>วันวิสาขบูชา</h2>
+                                <img
+                                  src="picture/1.png"
+                                  width="800"
+                                  height="400"
+                                  alt="การเฉลิมฉลองวันวิสาขบูชา"
+                                  class="image"
+                                />
+                                <p>
+                                    วันวิสาขบูชา หรือที่รู้จักกันในนามวันพระพุทธเจ้า เป็นวันสำคัญที่สุดในพระพุทธศาสนา
+                                    เป็นการเฉลิมฉลองวันประสูติ ตรัสรู้ และปรินิพพานของพระพุทธเจ้า ซึ่งตรงกับวันขึ้น 15 ค่ำ เดือน 6 ตามปฏิทินจันทรคติ
+                                    วันวิสาขบูชาเป็นเวลาที่ชาวพุทธได้ไตร่ตรองถึงคำสอนของพระพุทธเจ้าและมุ่งมั่นในการปฏิบัติตามแนวทางแห่งการพัฒนาจิตวิญญาณ
+                                </p>
+                            </section>
+                            <section id="วันอาสาฬหบูชา" class="section">
+                                <h2>วันอาสาฬหบูชา</h2>
+                                <img
+                                  src="picture/2.png"
+                                  width="800"
+                                  height="400"
+                                  alt="การเฉลิมฉลองวันอาสาฬหบูชา"
+                                  class="image"
+                                />
+                                <p>
+                                    วันอาสาฬหบูชา หรือที่รู้จักกันในนามวันธรรม เป็นวันที่ระลึกถึงการแสดงปฐมเทศนาของพระพุทธเจ้า
+                                    ซึ่งพระองค์ได้ประกาศหลักธรรมอริยสัจ 4 และมรรคมีองค์ 8 อันเป็นการหมุนกงล้อแห่งธรรม
+                                    วันนี้เป็นโอกาสให้ชาวพุทธได้ทำความเข้าใจคำสอนของพระพุทธเจ้าให้ลึกซึ้งยิ่งขึ้น
+                                    และมุ่งมั่นในการปฏิบัติสติและเมตตากรุณา
+                                </p>
+                            </section>
+                            <section id="วันมาฆบูชา" class="section">
+                                <h2>วันมาฆบูชา</h2>
+                                <img
+                                  src="picture/3.png"
+                                  width="800"
+                                  height="400"
+                                  alt="การเฉลิมฉลองวันมาฆบูชา"
+                                  class="image"
+                                />
+                                <p>
+                                    วันมาฆบูชา หรือที่รู้จักกันในนามวันสงฆ์ เป็นวันที่ระลึกถึงการชุมนุมโดยบังเอิญของพระอรหันต์ 1,250 รูป
+                                    ซึ่งเป็นศิษย์ของพระพุทธเจ้า ในวันนี้ ชาวพุทธจะไตร่ตรองถึงความสำคัญของพระสงฆ์ ซึ่งเป็นชุมชนของผู้ปฏิบัติธรรม
+                                    และคุณค่าของการปฏิบัติธรรมร่วมกัน
+                                </p>
+                            </section>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        `;
+
+        class BuddhistHolidays extends HTMLElement {
+            constructor() {
+                super();
+                this.attachShadow({ mode: 'open' });
+                this.shadowRoot.appendChild(template.content.cloneNode(true));
+            }
+        }
+
+        customElements.define('buddhist-holidays', BuddhistHolidays);
+
+        document.getElementById('app').appendChild(new BuddhistHolidays());
+    </script>
+</body>
+</html>
