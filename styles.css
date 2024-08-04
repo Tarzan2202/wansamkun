@@ -20,21 +20,47 @@
     --ring: hsl(142, 86%, 28%);
     --radius: 0.5rem;
 }
+
+:root.night-mode {
+    --background: hsl(240, 10%, 10%);
+    --foreground: hsl(0, 0%, 90%);
+    --card: hsl(240, 10%, 15%);
+    --card-foreground: hsl(0, 0%, 90%);
+    --popover: hsl(240, 10%, 15%);
+    --popover-foreground: hsl(0, 0%, 90%);
+    --primary: hsl(142, 86%, 35%);
+    --primary-foreground: hsl(356, 29%, 98%);
+    --secondary: hsl(240, 4.8%, 20%);
+    --secondary-foreground: hsl(0, 0%, 90%);
+    --muted: hsl(240, 4.8%, 20%);
+    --muted-foreground: hsl(240, 3.8%, 70%);
+    --accent: hsl(240, 4.8%, 20%);
+    --accent-foreground: hsl(0, 0%, 90%);
+    --destructive: hsl(0, 72%, 51%);
+    --destructive-foreground: hsl(0, 0%, 98%);
+    --border: hsl(240, 5.9%, 30%);
+    --input: hsl(240, 5.9%, 30%);
+    --ring: hsl(142, 86%, 35%);
+}
+
 body {
     background-color: var(--background);
     color: var(--foreground);
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    transition: background-color 0.3s, color 0.3s;
 }
 .container {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    align-items: center; /* Added for mobile responsiveness */
 }
 .header {
     background-color: var(--background);
     padding: 1rem 1rem;
+    width: 100%; /* Added for mobile responsiveness */
 }
 .inner-header {
     max-width: 1200px;
@@ -49,6 +75,7 @@ body {
     flex: 1;
     background-color: var(--muted);
     padding: 3rem 1rem;
+    width: 100%; /* Added for mobile responsiveness */
 }
 .content {
     max-width: 1200px;
@@ -68,6 +95,7 @@ body {
 .footer {
     background-color: var(--background);
     padding: 1.5rem 1rem;
+    width: 100%; /* Added for mobile responsiveness */
 }
 .inner-footer {
     max-width: 1200px;
@@ -81,6 +109,7 @@ body {
     background-color: var(--background);
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 100%; /* Added for mobile responsiveness */
 }
 .nav-list {
     display: flex;
@@ -104,4 +133,16 @@ body {
 }
 .section {
     scroll-margin-top: 70px;
+}
+
+#night-mode-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--foreground);
+}
+
+#night-mode-toggle:hover {
+    color: var(--primary);
 }
