@@ -19,6 +19,7 @@
     --input: hsl(240, 5.9%, 90%);
     --ring: hsl(142, 86%, 28%);
     --radius: 0.5rem;
+    
 }
 
 :root.night-mode {
@@ -75,7 +76,7 @@ body {
     flex: 1;
     background-color: var(--muted);
     padding: 3rem 1rem;
-    width: 100%; /* Added for mobile responsiveness */
+    width: 50%;
 }
 .content {
     max-width: 1200px;
@@ -90,7 +91,12 @@ body {
     margin: 0 auto;
     border-radius: var(--radius);
     object-fit: cover;
-    aspect-ratio: 2 / 1;
+    width: 800;
+    height: 600;
+}
+.img{
+    width: 800;
+    height: 600;
 }
 .footer {
     background-color: var(--background);
@@ -109,7 +115,7 @@ body {
     background-color: var(--background);
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    width: 100%; /* Added for mobile responsiveness */
+    width: 100%;
 }
 .nav-list {
     display: flex;
